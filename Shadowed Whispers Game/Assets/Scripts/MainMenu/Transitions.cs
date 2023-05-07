@@ -12,11 +12,17 @@ public class Transitions : MonoBehaviour
     void Start()
     {
         canvasGroup = GameObject.Find( "darkyboi" ).GetComponent< CanvasGroup >( );
+        fadeMeIn( );
     }
 
-    public void FadeThisOnePlease( )
+    public void fadeMeOut( )
     {
         StartCoroutine( FadeOut( ) );
+    }
+
+    public void fadeMeIn( )
+    {
+        StartCoroutine( FadeIn( ) );
     }
 
     public void resetPrefs( )
@@ -43,7 +49,7 @@ public class Transitions : MonoBehaviour
 
     public void newGame( string sceneToChangeTo )
     {
-        FadeThisOnePlease( );
+        fadeMeOut( );
         if( sceneToChangeTo != null )
             StartCoroutine( ChangeScene( sceneToChangeTo ) );
         else    
@@ -53,16 +59,25 @@ public class Transitions : MonoBehaviour
 
     public void continueGame( )
     {
-        FadeThisOnePlease( );
+        fadeMeOut( );
         if( PlayerPrefs.GetString( "SceneStart" ) == "MainMenu" )
             PlayerPrefs.SetString( "SceneStart", "1.1" );
         StartCoroutine( ChangeScene( PlayerPrefs.GetString( "SceneStart" ) ) );
         PlayerPrefs.SetInt( "HasStartedGame", 1 );
     }
 
+    public void changeScene( string sceneToChangeTo )
+    {
+        fadeMeOut( );
+        if( sceneToChangeTo != null )
+            StartCoroutine( ChangeScene( sceneToChangeTo ) );
+        else    
+            StartCoroutine( ChangeScene( "MainMenu" ) );
+    }
+
     public IEnumerator ChangeScene( string sceneToChangeTo )
     {
-        yield return new WaitForSeconds( 2 );
+        yield return new WaitForSeconds( .1f );
         SceneManager.LoadScene( sceneToChangeTo );
     }
 
@@ -70,7 +85,18 @@ public class Transitions : MonoBehaviour
     {
         while( canvasGroup.alpha < 1 )
         {
-            canvasGroup.alpha += Time.deltaTime / 2;
+            canvasGroup.alpha += Time.deltaTime * 10;
+            yield return null;
+        }
+        canvasGroup.interactable = false;
+        yield return null;
+    }
+
+    IEnumerator FadeIn( )
+    {
+        while( canvasGroup.alpha > 0 )
+        {
+            canvasGroup.alpha -= Time.deltaTime * 10;
             yield return null;
         }
         canvasGroup.interactable = false;

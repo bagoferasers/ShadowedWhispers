@@ -15,10 +15,7 @@ public class Audio : MonoBehaviour
 
     private void Awake( )
     {
-        if( SceneManager.GetActiveScene( ).name == "MainMenu" || SceneManager.GetActiveScene( ).name == "LoadGame"
-            || SceneManager.GetActiveScene( ).name == "Progress" || SceneManager.GetActiveScene( ).name == "Settings"
-            || SceneManager.GetActiveScene( ).name == "Progress" )
-            DontDestroyOnLoad( gameObject );
+        DontDestroyOnLoad( gameObject );
     }
 
     // Start is called before the first frame update
@@ -29,6 +26,11 @@ public class Audio : MonoBehaviour
 
     void Update( ) 
     {
+        if( SceneManager.GetActiveScene( ).name != "MainMenu" && SceneManager.GetActiveScene( ).name != "LoadGame"
+            && SceneManager.GetActiveScene( ).name != "Progress" && SceneManager.GetActiveScene( ).name != "Settings"
+            && SceneManager.GetActiveScene( ).name != "Credits" )
+            Destroy( gameObject );
+
         if( !musicList[ songToPlay ].isPlaying )
         {
             songToPlay = Random.Range( 0, musicList.Length );
