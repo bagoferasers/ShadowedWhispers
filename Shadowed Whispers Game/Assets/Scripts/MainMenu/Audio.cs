@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class Audio : MonoBehaviour
@@ -11,6 +12,14 @@ public class Audio : MonoBehaviour
 
     private float random;
     private int songToPlay = 0;
+
+    private void Awake( )
+    {
+        if( SceneManager.GetActiveScene( ).name == "MainMenu" || SceneManager.GetActiveScene( ).name == "LoadGame"
+            || SceneManager.GetActiveScene( ).name == "Progress" || SceneManager.GetActiveScene( ).name == "Settings"
+            || SceneManager.GetActiveScene( ).name == "Progress" )
+            DontDestroyOnLoad( gameObject );
+    }
 
     // Start is called before the first frame update
     void Start()
