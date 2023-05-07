@@ -8,11 +8,23 @@ public class Transitions : MonoBehaviour
 
     private CanvasGroup canvasGroup;
     public string sceneToChangeTo;
+    public float menuFadeTime;
+    private float t;
 
     void Start()
     {
         canvasGroup = GameObject.Find( "darkyboi" ).GetComponent< CanvasGroup >( );
+        t = 10f;
+        if ( SceneManager.GetActiveScene( ).name == "MainMenu" )
+            t = menuFadeTime;
         fadeMeIn( );
+    }
+
+    public void exitMenu( )
+    {
+        PlayerPrefs.Save( );
+        fadeMeOut( );
+        StartCoroutine( goodbye( ) );
     }
 
     public void fadeMeOut( )
@@ -75,6 +87,13 @@ public class Transitions : MonoBehaviour
             StartCoroutine( ChangeScene( "MainMenu" ) );
     }
 
+    public IEnumerator goodbye( )
+    {
+        yield return new WaitForSeconds( 0.1f );
+        Debug.Log( "Exiting Game" );
+        Application.Quit( );
+    }
+
     public IEnumerator ChangeScene( string sceneToChangeTo )
     {
         yield return new WaitForSeconds( .1f );
@@ -96,7 +115,7 @@ public class Transitions : MonoBehaviour
     {
         while( canvasGroup.alpha > 0 )
         {
-            canvasGroup.alpha -= Time.deltaTime * 10;
+            canvasGroup.alpha -= Time.deltaTime * t;
             yield return null;
         }
         canvasGroup.interactable = false;
