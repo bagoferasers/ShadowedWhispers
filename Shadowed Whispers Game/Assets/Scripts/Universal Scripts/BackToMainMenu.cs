@@ -58,4 +58,12 @@ public class BackToMainMenu : MonoBehaviour
         canvasGroup.interactable = false;
         yield return null;
     }
+
+    private void OnTriggerEnter2D( Collider2D other )
+    {
+        if ( other.gameObject.CompareTag( "EndCredits" ) )
+        {
+            changeSceneToMainMenu( );
+        }
+    }
 }

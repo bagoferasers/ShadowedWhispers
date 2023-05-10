@@ -12,6 +12,7 @@ public class Audio : MonoBehaviour
 
     private float random;
     private int songToPlay = 0;
+    private bool playing = false;
 
     private void Awake( )
     {
@@ -26,6 +27,12 @@ public class Audio : MonoBehaviour
 
     void Update( ) 
     {
+        if( !playing && !musicList[ songToPlay ].isPlaying )
+        {
+            musicList[ songToPlay ].Play( );
+            playing = true;
+        }
+
         if( SceneManager.GetActiveScene( ).name != "MainMenu" && SceneManager.GetActiveScene( ).name != "LoadGame"
             && SceneManager.GetActiveScene( ).name != "Progress" && SceneManager.GetActiveScene( ).name != "Settings"
             && SceneManager.GetActiveScene( ).name != "Credits" )
@@ -45,6 +52,7 @@ public class Audio : MonoBehaviour
 
     IEnumerator playMusic( )
     {
+        musicList[ songToPlay ].Play( );
         float originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
         float currentVolume = -26f;
         mixer.SetFloat( "Music", currentVolume );
@@ -70,5 +78,15 @@ public class Audio : MonoBehaviour
             yield return null;
         }
         yield return null;
+    }
+
+    void OnDestroy()
+    {
+        playing = false;
+        StopAllCoroutines( );
+        foreach( var music in musicList )
+        {
+            music.Stop( );
+        }
     }
 }

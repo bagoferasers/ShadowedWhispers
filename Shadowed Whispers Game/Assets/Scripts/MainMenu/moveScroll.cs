@@ -8,19 +8,24 @@ public class moveScroll : MonoBehaviour
     private float canvasHeight;
     private Vector3 startPosition;
 
-    void Start( )
+    void Start()
     {
-        RectTransform rectTransform = GetComponent< RectTransform >( );
+        RectTransform rectTransform = GetComponent<RectTransform>();
         canvasHeight = rectTransform.rect.height;
         startPosition = rectTransform.position;
+        StartCoroutine(Scroll());
     }
 
-    void Update( )
+    IEnumerator Scroll()
     {
-        transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
-        if ( transform.position.y >= startPosition.y + canvasHeight )
+        while (true)
         {
-            transform.position = startPosition;
+            transform.position += Vector3.up * scrollSpeed * Time.deltaTime;
+            if (transform.position.y >= startPosition.y + canvasHeight)
+            {
+                transform.position = startPosition;
+            }
+            yield return null;
         }
     }
 }
