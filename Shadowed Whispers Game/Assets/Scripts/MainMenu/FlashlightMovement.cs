@@ -8,7 +8,6 @@ public class FlashlightMovement : MonoBehaviour
     public float rotationAngle;
     public float waitThisMuch;
 
-    private bool r;
     private bool rotating;
     private Quaternion startRotation;
     private Quaternion newRotation;
@@ -18,7 +17,6 @@ public class FlashlightMovement : MonoBehaviour
         startRotation = transform.rotation;
         newRotation = Quaternion.Euler( 0f, 0f, Random.Range( 0f, rotationAngle ) );
         rotating = false;
-        r = false;
     }
 
     void Update()
