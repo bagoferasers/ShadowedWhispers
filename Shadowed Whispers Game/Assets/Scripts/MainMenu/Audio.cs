@@ -11,7 +11,6 @@ public class Audio : MonoBehaviour
     public AudioSource[] musicList;
 
     private int songToPlay = 0;
-    private bool hasFaded = false;
 
     private void Awake( )
     {
@@ -22,6 +21,7 @@ public class Audio : MonoBehaviour
             return;
         }
         DontDestroyOnLoad( gameObject );      
+        PlayerPrefs.SetInt( "hasEnteredGame", 0 );
     }
 
     void Start( )
@@ -56,23 +56,17 @@ public class Audio : MonoBehaviour
 
     IEnumerator fadeMusicIn( )
     {
-        if( !hasFaded )
+        float originalVolume = -20f;
+        float currentVolume = -40f;
+        if ( PlayerPrefs.GetFloat( "MusicVolume" ) != 0 )
+            originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
+        mixer.SetFloat( "MusicVolume", currentVolume );
+        while ( currentVolume < originalVolume )
         {
-            hasFaded = true;
-            float originalVolume;
-            if ( PlayerPrefs.GetFloat( "MusicVolume" ) != 0 )
-                originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
-            else
-                originalVolume = -20f;
-            float currentVolume = -40f;
+            currentVolume += 1.5f * Time.deltaTime;
             mixer.SetFloat( "MusicVolume", currentVolume );
-            while ( currentVolume < originalVolume )
-            {
-                currentVolume += 1.5f * Time.deltaTime;
-                mixer.SetFloat( "MusicVolume", currentVolume );
-                yield return null;
-            }            
-        }
+            yield return null;
+        }            
     }
 
     IEnumerator fadeMusicOut( )
@@ -80,15 +74,12 @@ public class Audio : MonoBehaviour
         float originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
         float currentVolume = PlayerPrefs.GetFloat( "MusicVolume" );
         float targetVolume = -26f;
-        if ( mixer )
+        mixer.SetFloat( "MusicVolume", currentVolume );
+        while ( currentVolume > targetVolume )
         {
+            currentVolume -= 0.5f * Time.deltaTime;
             mixer.SetFloat( "MusicVolume", currentVolume );
-            while ( currentVolume > targetVolume )
-            {
-                currentVolume -= 0.5f * Time.deltaTime;
-                mixer.SetFloat( "MusicVolume", currentVolume );
-                yield return null;
-            }
+            yield return null;
         }
     }
 

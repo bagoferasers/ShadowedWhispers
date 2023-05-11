@@ -5,33 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Transitions : MonoBehaviour
 {
-
     private CanvasGroup canvasGroup;
     public string sceneToChangeTo;
-    public float menuFadeTime;
-    private float t;
+    public float fadeMultiplier;
 
     void Start( )
     {
         canvasGroup = GameObject.Find( "darkyboi" ).GetComponent< CanvasGroup >( );
-        fadeMeIn( );
+        StartCoroutine( FadeIn( ) );
     }
 
     public void exitMenu( )
     {
         PlayerPrefs.Save( );
-        fadeMeOut( );
         StartCoroutine( goodbye( ) );
-    }
-
-    public void fadeMeOut( )
-    {
-        StartCoroutine( FadeOut( ) );
-    }
-
-    public void fadeMeIn( )
-    {
-        StartCoroutine( FadeIn( ) );
     }
 
     public void resetPrefs( )
@@ -53,69 +40,82 @@ public class Transitions : MonoBehaviour
         PlayerPrefs.SetFloat( "SystemVolume", sysVol );
         PlayerPrefs.SetFloat( "EffectsVolume", effVol );
         PlayerPrefs.SetFloat( "CharacterVolume", charVol );
-        PlayerPrefs.SetString( "SceneStart", "1.1" );
+        PlayerPrefs.SetString( "SceneStart", "MainMenu" );
     }
 
     public void newGame( string sceneToChangeTo )
     {
-        fadeMeOut( );
         if( sceneToChangeTo != null )
-            StartCoroutine( ChangeScene( sceneToChangeTo ) );
+            changeScene( sceneToChangeTo );
         else    
-            StartCoroutine( ChangeScene( "1.1" ) );
+            changeScene( PlayerPrefs.GetString( "1.1" ) );
         PlayerPrefs.SetInt( "HasStartedGame", 1 );
     }
 
     public void continueGame( )
     {
-        fadeMeOut( );
         if( PlayerPrefs.GetString( "SceneStart" ) == "MainMenu" )
             PlayerPrefs.SetString( "SceneStart", "1.1" );
-        StartCoroutine( ChangeScene( PlayerPrefs.GetString( "SceneStart" ) ) );
+        changeScene( PlayerPrefs.GetString( "SceneStart" ) );
         PlayerPrefs.SetInt( "HasStartedGame", 1 );
     }
 
-    public void changeScene( string sceneToChangeTo )
+    public void changeScene( string thisScene )
     {
-        fadeMeOut( );
-        if( sceneToChangeTo != null )
-            StartCoroutine( ChangeScene( sceneToChangeTo ) );
-        else    
-            StartCoroutine( ChangeScene( "MainMenu" ) );
+        sceneToChangeTo = thisScene;
+        StartCoroutine( FadeThenLoad( ) );
+    }
+
+    IEnumerator FadeThenLoad( )
+    {
+        StartCoroutine( FadeOut( ) );
+        while( true )
+        {
+            if( canvasGroup.alpha > 0.9f )
+            {
+                SceneManager.LoadScene( sceneToChangeTo );
+                break;          
+            }
+            yield return null;
+        }
+        yield return null;
     }
 
     public IEnumerator goodbye( )
     {
-        yield return new WaitForSeconds( 0.1f );
-        Debug.Log( "Exiting Game" );
+        StartCoroutine( FadeOut( ) );
+        while( true )
+        {
+            if( canvasGroup.alpha > 0.9f )
+            {
+                Debug.Log( "Exiting Game" );
+                break;    
+            }            
+            yield return null;
+        }
         Application.Quit( );
-    }
-
-    public IEnumerator ChangeScene( string sceneToChangeTo )
-    {
-        yield return new WaitForSeconds( .1f );
-        SceneManager.LoadScene( sceneToChangeTo );
+        yield return null;
     }
 
     IEnumerator FadeOut( )
     {
-        while( canvasGroup.alpha < 1 )
+        while( canvasGroup.alpha < 1f )
         {
-            canvasGroup.alpha += Time.deltaTime * 12;
+            canvasGroup.alpha += Time.deltaTime * fadeMultiplier;
             yield return null;
         }
-        canvasGroup.interactable = false;
+        canvasGroup.alpha = 1f;
         yield return null;
     }
 
     IEnumerator FadeIn( )
     {
-        while( canvasGroup.alpha > 0 )
+        while( canvasGroup.alpha > 0f )
         {
-            canvasGroup.alpha -= Time.deltaTime * 12;
+            canvasGroup.alpha -= Time.deltaTime * fadeMultiplier;
             yield return null;
         }
-        canvasGroup.interactable = false;
+        canvasGroup.alpha = 0f;
         yield return null;
     }
 }

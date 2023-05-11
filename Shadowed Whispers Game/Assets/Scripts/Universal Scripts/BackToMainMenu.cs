@@ -7,7 +7,6 @@ public class BackToMainMenu : MonoBehaviour
 {
 
     private CanvasGroup canvasGroup;
-    // public float FadeTime;
 
     void Start()
     {
