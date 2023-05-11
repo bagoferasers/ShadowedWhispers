@@ -11,7 +11,7 @@ public class Transitions : MonoBehaviour
     public float menuFadeTime;
     private float t;
 
-    void Start()
+    void Start( )
     {
         canvasGroup = GameObject.Find( "darkyboi" ).GetComponent< CanvasGroup >( );
         t = 10f;

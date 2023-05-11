@@ -8,83 +8,94 @@ public class Audio : MonoBehaviour
 {
     [ Header( "Put mixer here:" ) ]
     public AudioMixer mixer;
-    public AudioSource[ ] musicList;
+    public AudioSource[] musicList;
 
-    private float random;
     private int songToPlay = 0;
-    private bool playing = false;
+    private bool hasFaded = false;
 
     private void Awake( )
     {
-        DontDestroyOnLoad( gameObject );
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine( playMusic( ) );
-    }
-
-    void Update( ) 
-    {
-        if( !playing && !musicList[ songToPlay ].isPlaying )
+        Audio[] audioObjects = FindObjectsOfType< Audio >( );
+        if ( audioObjects.Length > 1 ) 
         {
-            musicList[ songToPlay ].Play( );
-            playing = true;
+            Destroy( gameObject );
+            return;
         }
+        DontDestroyOnLoad( gameObject );      
+    }
 
-        if( SceneManager.GetActiveScene( ).name != "MainMenu" && SceneManager.GetActiveScene( ).name != "LoadGame"
+    void Start( )
+    {        
+        songToPlay = Random.Range( 0, musicList.Length );
+        musicList[ songToPlay ].Play( );
+        if ( PlayerPrefs.GetInt( "hasEnteredGame" ) == 0 )
+        {
+            StartCoroutine( fadeMusicIn( ) );
+            PlayerPrefs.SetInt( "hasEnteredGame", 1 );
+        }
+    }
+
+    void Update( )
+    {
+        if ( SceneManager.GetActiveScene( ).name != "MainMenu" && SceneManager.GetActiveScene( ).name != "LoadGame"
             && SceneManager.GetActiveScene( ).name != "Progress" && SceneManager.GetActiveScene( ).name != "Settings"
             && SceneManager.GetActiveScene( ).name != "Credits" )
             Destroy( gameObject );
 
-        if( !musicList[ songToPlay ].isPlaying )
+        if ( !musicList[ songToPlay ].isPlaying )
         {
             songToPlay = Random.Range( 0, musicList.Length );
             musicList[ songToPlay ].Play( );
         }
     }
 
-    void fadeTheMusic( )
+    public void fadeTheMusic( )
     {
-        StartCoroutine( fadeMusic( ) );
+        StartCoroutine( fadeMusicOut( ) ) ;
     }
 
-    IEnumerator playMusic( )
+    IEnumerator fadeMusicIn( )
     {
-        musicList[ songToPlay ].Play( );
-        float originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
-        float currentVolume = -26f;
-        mixer.SetFloat( "Music", currentVolume );
-        while( currentVolume < originalVolume )
+        if( !hasFaded )
         {
-            currentVolume += 0.1f;
-            mixer.SetFloat( "Music", currentVolume );
-            yield return null;
+            hasFaded = true;
+            float originalVolume;
+            if ( PlayerPrefs.GetFloat( "MusicVolume" ) != 0 )
+                originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
+            else
+                originalVolume = -20f;
+            float currentVolume = -40f;
+            mixer.SetFloat( "MusicVolume", currentVolume );
+            while ( currentVolume < originalVolume )
+            {
+                currentVolume += 1.5f * Time.deltaTime;
+                mixer.SetFloat( "MusicVolume", currentVolume );
+                yield return null;
+            }            
         }
-        yield return null;
     }
 
-    IEnumerator fadeMusic( )
+    IEnumerator fadeMusicOut( )
     {
         float originalVolume = PlayerPrefs.GetFloat( "MusicVolume" );
         float currentVolume = PlayerPrefs.GetFloat( "MusicVolume" );
         float targetVolume = -26f;
-        mixer.SetFloat( "Music", currentVolume );
-        while( currentVolume > targetVolume )
+        if ( mixer )
         {
-            currentVolume -= 0.3f;
-            mixer.SetFloat( "Music", currentVolume );
-            yield return null;
+            mixer.SetFloat( "MusicVolume", currentVolume );
+            while ( currentVolume > targetVolume )
+            {
+                currentVolume -= 0.5f * Time.deltaTime;
+                mixer.SetFloat( "MusicVolume", currentVolume );
+                yield return null;
+            }
         }
-        yield return null;
     }
 
-    void OnDestroy()
+    void OnDestroy( )
     {
-        playing = false;
         StopAllCoroutines( );
-        foreach( var music in musicList )
+        foreach ( var music in musicList )
         {
             music.Stop( );
         }
