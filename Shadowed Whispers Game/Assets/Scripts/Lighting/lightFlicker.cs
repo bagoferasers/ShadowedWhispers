@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lightFlicker : MonoBehaviour
 {
-    public UnityEngine.Rendering.Universal.Light2D light;
+    public UnityEngine.Rendering.Universal.Light2D myLight;
     public float minIntensity;
     public float maxIntensity;
     public float maxDuration;
@@ -28,7 +28,7 @@ public class lightFlicker : MonoBehaviour
             while( duration > 0 )
             {
                 float i = Mathf.Lerp( minIntensity, maxIntensity, Mathf.PingPong( Time.time * speed, 1f ) );
-                light.intensity = i;
+                myLight.intensity = i;
                 yield return null;
                 duration -= Time.deltaTime;
             }
