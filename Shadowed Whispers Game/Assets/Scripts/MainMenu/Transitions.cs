@@ -71,7 +71,7 @@ public class Transitions : MonoBehaviour
         StartCoroutine( FadeOut( ) );
         while( true )
         {
-            if( canvasGroup.alpha > 1f )
+            if( canvasGroup.alpha == 1f )
             {
                 SceneManager.LoadScene( sceneToChangeTo );
                 break;          
@@ -86,14 +86,14 @@ public class Transitions : MonoBehaviour
         StartCoroutine( FadeOut( ) );
         while( true )
         {
-            if( canvasGroup.alpha > 0f )
+            if( canvasGroup.alpha == 1f )
             {
                 Debug.Log( "Exiting Game" );
+                Application.Quit( );
                 break;    
             }            
             yield return null;
         }
-        Application.Quit( );
         yield return null;
     }
 
