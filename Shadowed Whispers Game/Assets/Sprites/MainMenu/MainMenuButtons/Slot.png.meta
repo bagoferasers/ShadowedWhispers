@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52952eef141664b4999a31ea4f2712b0
+guid: 0b2e5e876b501b3468989e297bd01785
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,43 +129,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SettingsIcon_0
+      name: Slot_1
       rect:
         serializedVersion: 2
-        x: 145
-        y: 72
-        width: 28
-        height: 35
+        x: 75
+        y: 108
+        width: 226
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47405bc3f0792f941bba0562eb66f293
-      internalID: -1085127176
+      spriteID: cf01c0e9bf553b64aa11c9203eee5763
+      internalID: -1207956722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SettingsIcon_1
+      name: Slot_3
       rect:
         serializedVersion: 2
-        x: 465
-        y: 72
-        width: 28
-        height: 35
+        x: 395
+        y: 111
+        width: 226
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46073d85bf154074d869c7ce621d5ff0
-      internalID: 1712627824
+      spriteID: ce6540d9db5607e41879b96d812ffa15
+      internalID: 2037664964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slot_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 108
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe1af702f9dab643b85bd2ea23f489c
+      internalID: -404170296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slot_2
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 108
+        width: 28
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf940a5a54c141c4bba487c7468473d4
+      internalID: 2045781992
       vertices: []
       indices: 
       edges: []
@@ -181,8 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SettingsIcon_0: -1085127176
-      SettingsIcon_1: 1712627824
+      Slot_0: -404170296
+      Slot_1: -1207956722
+      Slot_2: 2045781992
+      Slot_3: 2037664964
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

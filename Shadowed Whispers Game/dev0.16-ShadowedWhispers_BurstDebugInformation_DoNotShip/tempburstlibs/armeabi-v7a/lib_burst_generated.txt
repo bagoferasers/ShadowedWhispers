@@ -111,6 +111,7 @@ Library: D:\UNITY\ShadowedWhispers\Shadowed Whispers Game\Temp\StagingArea\tempb
 --compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
 --compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 --compilation-defines=UNITY_POST_PROCESSING_STACK_V2
+--compilation-defines=UNITY_INCLUDE_TESTS
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
@@ -124,6 +125,9 @@ Library: D:\UNITY\ShadowedWhispers\Shadowed Whispers Game\Temp\StagingArea\tempb
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
+--compilation-defines=ADAPTIVE_PERFORMANCE_2_0_0_OR_NEWER
+--compilation-defines=ADAPTIVE_PERFORMANCE_2_1_0_OR_NEWER
+--compilation-defines=ADAPTIVE_PERFORMANCE_4_0_0_OR_NEWER
 --compilation-defines=ENABLE_BURST_1_0_0_OR_NEWER
 --compilation-defines=USING_ANIMATION_MODULE
 --compilation-defines=USING_PHYSICS2D_MODULE
@@ -132,6 +136,7 @@ Library: D:\UNITY\ShadowedWhispers\Shadowed Whispers Game\Temp\StagingArea\tempb
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --compilation-defines=ENABLE_SPRITESHAPE_BURST
 --compilation-defines=ENABLE_URP
+--compilation-defines=VISUAL_SCRIPTING_ENABLED
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=D:\UNITY\ShadowedWhispers\Shadowed Whispers Game\Temp\Burst
 --key-folder=D:/UNITY/2021.3.24f1/Editor/Data/PlaybackEngines/AndroidPlayer
