@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 966b00e5869ce684599f26c55176a1ee
+guid: 7fd2e7733e9c7434c88b99946d6e0495
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -122,8 +134,8 @@ TextureImporter:
         serializedVersion: 2
         x: 178
         y: 78
-        width: 26
-        height: 30
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40457047f028c0844932ad8c5292ce1f
-      internalID: 2046993738
+      spriteID: f3116ddb24515e74c8d3b21a434bb40a
+      internalID: -1564597047
       vertices: []
       indices: 
       edges: []
@@ -143,8 +155,8 @@ TextureImporter:
         serializedVersion: 2
         x: 498
         y: 78
-        width: 26
-        height: 30
+        width: 24
+        height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 399d8a0fdd34a134bb00ed727b62669b
-      internalID: 1885748210
+      spriteID: 6823069fcb60b4c4e89a9e594386fa30
+      internalID: -1885641920
       vertices: []
       indices: 
       edges: []
@@ -169,10 +181,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ExitGameIcon_0: 2046993738
-      ExitGameIcon_1: 1797469992
-      ExitGameIcon_2: 1885748210
-      ExitGameIcon_3: 917637702
+      ExitGameIcon_0: -1564597047
+      ExitGameIcon_1: 53393485
+      ExitGameIcon_2: -1885641920
+      ExitGameIcon_3: -108015212
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

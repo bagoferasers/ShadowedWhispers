@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52a4a6aad841ce94c93656de2840ec18
+guid: 3b6f7c75828492a46b0f50a16373be16
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,47 +113,101 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ProgressButton_0
+      name: Slot_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 78
-        width: 112
-        height: 26
+        x: 45
+        y: 105
+        width: 28
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90765830246a0cb408b9d9ab34eb17f3
-      internalID: -110221300
+      spriteID: cedea1ab51370ab4499483cd9fdf7ea6
+      internalID: -1309028428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProgressButton_1
+      name: Slot_1
       rect:
         serializedVersion: 2
-        x: 419
-        y: 78
-        width: 112
-        height: 26
+        x: 75
+        y: 105
+        width: 226
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 039a68ba01c98374a92d1df7eed66222
-      internalID: -10928164
+      spriteID: 258f41bf685acaf4d856de5fc71704ff
+      internalID: 1888156033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slot_2
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 104
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9767e90b1ed0204387a314fca2e6873
+      internalID: -1970465262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slot_3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 107
+        width: 226
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903fccf625e085e478a37df107782e16
+      internalID: 616130116
       vertices: []
       indices: 
       edges: []
@@ -169,8 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ProgressButton_0: -110221300
-      ProgressButton_1: -10928164
+      Slot_0: -1309028428
+      Slot_1: 1888156033
+      Slot_2: -1970465262
+      Slot_3: 616130116
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

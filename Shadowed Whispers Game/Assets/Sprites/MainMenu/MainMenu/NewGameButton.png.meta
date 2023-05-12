@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e49a72b8d39c16a42a3ac28aa8ad220c
+guid: 39d5eefd76f0a764684a5d0ab98d9856
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -120,10 +132,10 @@ TextureImporter:
       name: NewGameButton_0
       rect:
         serializedVersion: 2
-        x: 99
+        x: 102
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aaebc289145efe746ba2565af035f326
-      internalID: 532848498
+      spriteID: 345b5b2839f8ed548a8d5acca183eb7e
+      internalID: -152634426
       vertices: []
       indices: 
       edges: []
@@ -141,10 +153,10 @@ TextureImporter:
       name: NewGameButton_1
       rect:
         serializedVersion: 2
-        x: 419
+        x: 422
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f23673746dc467458ba7e225260fdc3
-      internalID: 309411745
+      spriteID: 4cc9c99ffe13807418486c5279b13777
+      internalID: -892301487
       vertices: []
       indices: 
       edges: []
@@ -169,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NewGameButton_0: 532848498
-      NewGameButton_1: 309411745
+      NewGameButton_0: -152634426
+      NewGameButton_1: -892301487
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

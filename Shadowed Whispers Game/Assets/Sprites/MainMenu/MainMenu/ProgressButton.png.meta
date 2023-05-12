@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3b29385c5858c894c8909280d67d06c4
+guid: 0e047242121c0094fad6041d4b9d7674
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,17 +113,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ExitGameButton_0
+      name: ProgressButton_0
       rect:
         serializedVersion: 2
-        x: 99
+        x: 102
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08229f486f9eb834ca47d8cd02631536
-      internalID: 782615562
+      spriteID: b47ac20abdd213742a25f2c5e8529cec
+      internalID: -1527093664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ExitGameButton_1
+      name: ProgressButton_1
       rect:
         serializedVersion: 2
-        x: 419
+        x: 422
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b08bad9b5c6aad4d991e580858220c5
-      internalID: 1087838247
+      spriteID: e0be359b5fe27ac45ba37a1b22282532
+      internalID: 813437960
       vertices: []
       indices: 
       edges: []
@@ -169,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ExitGameButton_0: 782615562
-      ExitGameButton_1: 1087838247
+      ProgressButton_0: -1527093664
+      ProgressButton_1: 813437960
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

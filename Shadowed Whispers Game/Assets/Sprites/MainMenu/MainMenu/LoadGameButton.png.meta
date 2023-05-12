@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 66c2e6877f7bfa44fa97cfa06810264b
+guid: 30e2ad7e1d5688e4aa771be9efb7e525
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -120,10 +132,10 @@ TextureImporter:
       name: LoadGameButton_0
       rect:
         serializedVersion: 2
-        x: 99
+        x: 102
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30c975e3e7033914f8c19353330777be
-      internalID: -1354048591
+      spriteID: 7aff844fce0344d43b43a01565e35f63
+      internalID: 1400949614
       vertices: []
       indices: 
       edges: []
@@ -141,10 +153,10 @@ TextureImporter:
       name: LoadGameButton_1
       rect:
         serializedVersion: 2
-        x: 419
+        x: 422
         y: 78
-        width: 112
-        height: 26
+        width: 108
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d72a2ea15953ea941908ffd88d7b8d73
-      internalID: -1760833103
+      spriteID: c4bec480c0c074d409aaa3999d9dafbb
+      internalID: 1936521689
       vertices: []
       indices: 
       edges: []
@@ -169,8 +181,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LoadGameButton_0: -1354048591
-      LoadGameButton_1: -1760833103
+      LoadGameButton_0: 1400949614
+      LoadGameButton_1: 1936521689
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
