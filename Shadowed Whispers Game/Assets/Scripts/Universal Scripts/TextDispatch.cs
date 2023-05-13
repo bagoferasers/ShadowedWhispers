@@ -26,17 +26,7 @@ public class TextDispatch : MonoBehaviour
         {
             textToDisplay.text += c;
             audioSource.PlayOneShot( sound );
-            float r = Random.Range( 0f, typingSpeed );
-            yield return new WaitForSeconds( r );
+            yield return new WaitForSeconds( Random.Range( 0f, typingSpeed ) );
         }
     }
 }
-
-
-
-
-
-
-
-
-
