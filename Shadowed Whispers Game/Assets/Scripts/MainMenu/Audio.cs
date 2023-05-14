@@ -39,7 +39,8 @@ public class Audio : MonoBehaviour
     {
         if ( SceneManager.GetActiveScene( ).name != "MainMenu" && SceneManager.GetActiveScene( ).name != "LoadGame"
             && SceneManager.GetActiveScene( ).name != "Progress" && SceneManager.GetActiveScene( ).name != "Settings"
-            && SceneManager.GetActiveScene( ).name != "Credits" && SceneManager.GetActiveScene( ).name != "AreYouSure" )
+            && SceneManager.GetActiveScene( ).name != "Credits" && SceneManager.GetActiveScene( ).name != "AreYouSure"
+            && SceneManager.GetActiveScene( ).name != "CharacterCreation" )
             Destroy( gameObject );
 
         if ( !musicList[ songToPlay ].isPlaying )

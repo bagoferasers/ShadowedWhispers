@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu/AreYouSure.unity
     guid: e45326bf3aab1c744acdc3481c5b7b0a
+  - enabled: 1
+    path: Assets/Scenes/MainMenu/CharacterCreation.unity
+    guid: 9361823a7cbbbed4e8c2876e6c524e72
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 078dfb54237eee946b92c768652910b9, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 7676c581c8667f246809540dae2ecbc8, type: 2}

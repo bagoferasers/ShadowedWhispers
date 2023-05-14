@@ -25,8 +25,13 @@ public class TextDispatch : MonoBehaviour
         foreach ( char c in originalTextToDisplay )
         {
             textToDisplay.text += c;
-            audioSource.PlayOneShot( sound );
-            yield return new WaitForSeconds( Random.Range( 0f, typingSpeed ) );
+            if( c != ' ' )
+            {
+                audioSource.PlayOneShot( sound );
+                yield return new WaitForSeconds( Random.Range( 0f, typingSpeed ) );
+            }
+            else 
+                yield return null;
         }
     }
 }

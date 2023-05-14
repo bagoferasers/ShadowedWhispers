@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Smoke
+    uniqueID: 4057955671
+    locked: 0
   - name: UI
     uniqueID: 3774223963
     locked: 0
@@ -53,7 +56,4 @@ TagManager:
     locked: 0
   - name: Blackout
     uniqueID: 3884204871
-    locked: 0
-  - name: Smoke
-    uniqueID: 4057955671
     locked: 0
