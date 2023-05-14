@@ -47,6 +47,11 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# Music
+*.mp3
+*.wav
+*.flac
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta

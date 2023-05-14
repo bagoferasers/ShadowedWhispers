@@ -23,7 +23,6 @@ public class lightFlicker : MonoBehaviour
     {
         while( true )
         {
-            
             duration = Random.Range( 0, maxDuration );
             while( duration > 0 )
             {

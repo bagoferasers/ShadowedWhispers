@@ -15,9 +15,7 @@ public class CreditsTrigger : MonoBehaviour
     private void OnTriggerEnter2D( Collider2D other )
     {
         if ( other.CompareTag( "EndCredits" ) )
-        {
             StartCoroutine( FadeOut( ) );
-        }
     }
 
     void Update( ) 
