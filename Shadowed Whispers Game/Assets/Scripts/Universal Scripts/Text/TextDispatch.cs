@@ -15,8 +15,8 @@ public class TextDispatch : MonoBehaviour
     private void Start( )
     {
         audioSource = GetComponent< AudioSource >( );
-        originalTextToDisplay = textToDisplay.text;
-        textToDisplay.text = "";
+        originalTextToDisplay = PlayerPrefs.GetString( "textToDisplay" );
+        PlayerPrefs.SetString( "textToDisplay", "" );
         StartCoroutine( KeyboardType( ) );
     }
 
