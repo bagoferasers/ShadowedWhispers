@@ -30,9 +30,26 @@ public class Transitions : MonoBehaviour
         float effVol = PlayerPrefs.GetFloat( "EffectsVolume" );
         float charVol = PlayerPrefs.GetFloat( "CharacterVolume" );
 
+        // settings
+        int VibrateToggle = PlayerPrefs.GetInt( "VibrateToggle" );
+        int AlertToggle = PlayerPrefs.GetInt( "AlertToggle" );
+        int ColorBlindToggle = PlayerPrefs.GetInt( "ColorBlindToggle" );
+        int FPSToggle = PlayerPrefs.GetInt( "FPSToggle" );
+        int DamageToggle = PlayerPrefs.GetInt( "DamageToggle" );
+
+        // yes no button
+        string TextToDisplay = PlayerPrefs.GetString( "textToDisplay" );
+        string setYes = PlayerPrefs.GetString( "YesButtonScene" );
+        string setNo = PlayerPrefs.GetString( "NoButtonScene" );
+
         // reset all prefs 
         PlayerPrefs.DeleteAll( );
         PlayerPrefs.SetInt( "HasStartedGame", 0 );
+
+        // yes no button
+        PlayerPrefs.SetString( "textToDisplay", TextToDisplay );
+        PlayerPrefs.SetString( "YesButtonScene", setYes );
+        PlayerPrefs.SetString( "NoButtonScene", setNo );
 
         // return values of volume mixers
         PlayerPrefs.SetFloat( "MasterVolume", masterVol );
@@ -41,11 +58,45 @@ public class Transitions : MonoBehaviour
         PlayerPrefs.SetFloat( "EffectsVolume", effVol );
         PlayerPrefs.SetFloat( "CharacterVolume", charVol );
         PlayerPrefs.SetString( "SceneStart", "MainMenu" );
+
+        // settings
+        PlayerPrefs.SetInt( "VibrateToggle", VibrateToggle );
+        PlayerPrefs.SetInt( "AlertToggle", AlertToggle );
+        PlayerPrefs.SetInt( "ColorBlindToggle", ColorBlindToggle );
+        PlayerPrefs.SetInt( "FPSToggle", FPSToggle );
+        PlayerPrefs.SetInt( "DamageToggle", DamageToggle );
     }
 
     public void changeScene( string thisScene )
     {
         sceneToChangeTo = thisScene;
+        StartCoroutine( FadeThenLoad( ) );
+    }
+
+    public void changeSceneYes( )
+    {
+        Debug.Log( PlayerPrefs.GetString( "YesButtonScene" ) );
+        if( PlayerPrefs.GetInt( "OpeningScene" ) == 1 )
+        {
+            sceneToChangeTo = "AreYouSure";
+            PlayerPrefs.SetString( "YesButtonScene", "1.3" );
+            PlayerPrefs.SetString( "NoButtonScene", "1.2" );
+            PlayerPrefs.SetString( "textToDisplay", "Do you want to skip the tutorial?" );
+            PlayerPrefs.SetInt( "OpeningScene", 0 );
+        }
+        else if( PlayerPrefs.GetInt( "Tutorial" ) == 1 )
+        {
+            sceneToChangeTo = "1.3";
+            PlayerPrefs.SetInt( "Tutorial", 0 );
+        }
+        else
+            sceneToChangeTo = PlayerPrefs.GetString( "YesButtonScene");
+        StartCoroutine( FadeThenLoad( ) );
+    }
+
+    public void changeSceneNo( )
+    {
+        sceneToChangeTo = PlayerPrefs.GetString( "NoButtonScene");
         StartCoroutine( FadeThenLoad( ) );
     }
 

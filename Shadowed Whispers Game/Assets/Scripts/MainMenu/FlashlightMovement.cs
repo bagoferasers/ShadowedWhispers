@@ -12,14 +12,14 @@ public class FlashlightMovement : MonoBehaviour
     private Quaternion startRotation;
     private Quaternion newRotation;
 
-    void Start()
+    void Start( )
     {
         startRotation = transform.rotation;
         newRotation = Quaternion.Euler( 0f, 0f, Random.Range( 0f, rotationAngle ) );
         rotating = false;
     }
 
-    void Update()
+    void Update( )
     {
         if( !rotating )
         {
