@@ -11,31 +11,43 @@ public class toggle : MonoBehaviour
     public Color cOff;
     public string playerPrefsName;
 
-    // Start is called before the first frame update
     private void Start( )
     {
         t.onValueChanged.AddListener( changedValue );
-        if( PlayerPrefs.GetInt( playerPrefsName, 0 ) == 0 )
-            t.isOn = false; 
+        if( PlayerPrefs.GetInt( "HasStartedGame" ) == 0 )
+        {
+            if( playerPrefsName == "DamageToggle" || playerPrefsName == "AlertToggle" || playerPrefsName == "VibrateToggle" )
+            {
+                t.isOn = true;
+                i.color = cOn;                
+            }
+            else
+            {
+                i.color = cOff;
+                t.isOn = false;
+            }
+        }       
         else
         {
-            t.isOn = true;
-            i.color = cOn;
+            if( PlayerPrefs.GetInt( playerPrefsName ) == 0 )
+                t.isOn = false; 
+            else
+            {
+                t.isOn = false;
+                i.color = cOff;
+            }            
         }
     }
 
-    // Update is called once per frame
     private void changedValue( bool isOn )
     {
         if( isOn ) 
         {
-            Debug.Log( "t is on" );
             PlayerPrefs.SetInt( playerPrefsName, 1 );
             i.color = cOn;
         }
         else
         {
-            Debug.Log( "t is off" );
             PlayerPrefs.SetInt( playerPrefsName, 0 );
             i.color = Color.red;
         }

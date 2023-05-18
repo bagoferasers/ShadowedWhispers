@@ -69,13 +69,14 @@ public class Transitions : MonoBehaviour
 
     public void changeScene( string thisScene )
     {
+        if( thisScene == "1.3" )
+            PlayerPrefs.SetInt( "HasStartedGame", 1 );
         sceneToChangeTo = thisScene;
         StartCoroutine( FadeThenLoad( ) );
     }
 
     public void changeSceneYes( )
     {
-        Debug.Log( PlayerPrefs.GetString( "YesButtonScene" ) );
         if( PlayerPrefs.GetInt( "OpeningScene" ) == 1 )
         {
             sceneToChangeTo = "AreYouSure";
