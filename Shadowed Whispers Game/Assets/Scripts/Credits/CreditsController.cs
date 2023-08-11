@@ -11,9 +11,12 @@ public class CreditsController : MonoBehaviour, IFadeCanvasGroup, ISceneChange, 
     [ Header( "Speed of scroll:" ) ]
     public float speed = 1.0f;
 
+    [ Header( "Insert fade time:" ) ]
+    public float time = 2.0f;
+
     private Vector3 currentPosition;
 
-    public CanvasGroup canvasGroup
+    public CanvasGroup Canvas
     {
         get 
         {
@@ -32,12 +35,12 @@ public class CreditsController : MonoBehaviour, IFadeCanvasGroup, ISceneChange, 
     void Start( )
     {
         currentPosition = startPosition;
-        showCanvas( );
+        showCanvas( time );
     }
 
     void Update( )
     {
-        if( canvasGroup.alpha == 0 )
+        if( Canvas.alpha == 0 )
             changeScene( );
         Scroll( currentPosition );
     }
@@ -50,38 +53,38 @@ public class CreditsController : MonoBehaviour, IFadeCanvasGroup, ISceneChange, 
     private void OnTriggerEnter2D( Collider2D other )
     {
         if ( other.CompareTag( "End" ) )
-            hideCanvas( );
+            hideCanvas( time );
     }
 
-    public void showCanvas( )
+    public void showCanvas( float fadeTime )
     {
-        StartCoroutine( fadeIn( ) );
+        StartCoroutine( fadeIn( fadeTime ) );
     }
 
-    public void hideCanvas( )
+    public void hideCanvas( float fadeTime )
     {
-        StartCoroutine( fadeOut( ) );
+        StartCoroutine( fadeOut( fadeTime ) );
     }
 
-    IEnumerator fadeOut( )
+    IEnumerator fadeIn( float fadeTime )
     {
-        while( canvasGroup.alpha > 0 )
+        while( Canvas.alpha > 0 )
         {
-            canvasGroup.alpha -= Time.deltaTime / 2;
+            Canvas.alpha -= fadeTime * ( Time.deltaTime / 2 );
             yield return null;
         }
-        canvasGroup.interactable = false;
+        Canvas.interactable = false;
         yield return null;
     } 
 
-    IEnumerator fadeIn( )
+    IEnumerator fadeOut( float fadeTime )
     {
-        while( canvasGroup.alpha < 1 )
+        while( Canvas.alpha < 1 )
         {
-            canvasGroup.alpha += Time.deltaTime / 2;
+            Canvas.alpha += fadeTime * ( Time.deltaTime / 2 );
             yield return null;
         }
-        canvasGroup.interactable = false;
+        Canvas.interactable = false;
         yield return null;
     }
 

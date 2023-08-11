@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public interface IFadeCanvasGroup
 {
-    CanvasGroup canvasGroup{ get; }
-    void showCanvas( );
-    void hideCanvas( );
+    // read only 
+    CanvasGroup Canvas
+    {
+        get;
+    }
+
+    void showCanvas( float fadeTime );
+    void hideCanvas( float fadeTime );
 }
