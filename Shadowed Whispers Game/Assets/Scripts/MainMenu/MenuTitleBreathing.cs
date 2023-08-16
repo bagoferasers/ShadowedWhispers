@@ -1,12 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuTitleBreathing : MonoBehaviour
 {
-    public float size = 2.0f;
+    public float speed;
+    public float max;
+    public float min;
+    private Vector3 originalPosition;
+
     void Start( )
     {
+        originalPosition = transform.position;
         breathe( );
     }
 
@@ -17,9 +21,12 @@ public class MenuTitleBreathing : MonoBehaviour
 
     IEnumerator breathingNumerator( )
     {
-        while (true)
+        while ( true )
         {
-            //this.scale = Mathf.PingPong( 1.0f, size );
+            float factor = Mathf.Lerp( min, max, Mathf.PingPong( Time.time * speed, 1.0f ) );
+            Vector3 newPosition = new Vector3( originalPosition.x, originalPosition.y + factor, originalPosition.z );
+            transform.position = newPosition;
+            yield return null;
         }
     }
 }
