@@ -32,7 +32,7 @@ public class LightFlicker : MonoBehaviour
                 yield return null;
             }
             light2D.intensity = 1.0f;
-            waitTime = new WaitForSeconds( Random.Range( 0.1f, 10.0f ) );
+            waitTime = new WaitForSeconds( Random.Range( 0.1f, 5.0f ) );
         }
     }
 }
