@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mobile.notifications@2.2.1/Runtime/Runtime.iml" filepath="$PROJECT_DIR$/Library/PackageCache/com.unity.mobile.notifications@2.2.1/Runtime/Runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Shadowed Whispers Game.iml" filepath="$PROJECT_DIR$/.idea/Shadowed Whispers Game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mobile.notifications@2.2.1/Tests/Tests.iml" filepath="$PROJECT_DIR$/Library/PackageCache/com.unity.mobile.notifications@2.2.1/Tests/Tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/build.iml" filepath="$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/PackageCache/com.unity.adaptiveperformance.samsung.android@4.0.2/com.unity.adaptiveperformance.samsung.android@4.0.2.iml" filepath="$PROJECT_DIR$/Library/PackageCache/com.unity.adaptiveperformance.samsung.android@4.0.2/com.unity.adaptiveperformance.samsung.android@4.0.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/launcher.iml" filepath="$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/launcher/launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/unityLibrary.iml" filepath="$PROJECT_DIR$/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/src/unityLibrary.iml" />
+    </modules>
+  </component>
+</project>

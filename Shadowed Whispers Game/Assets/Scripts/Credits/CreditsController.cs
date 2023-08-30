@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CreditsController : MonoBehaviour, IFadeCanvasGroup, ISceneChange, IScroll
+public class CreditsController : MonoBehaviour, IFadeCanvasGroup, IScroll
 {
     [ Header( "Name of Scene to change to:" ) ]
     public string nameOfScene = "MainMenu";

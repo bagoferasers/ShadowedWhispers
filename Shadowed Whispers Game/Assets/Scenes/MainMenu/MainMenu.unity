@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 16043899}
   - component: {fileID: 16043902}
   - component: {fileID: 16043901}
+  - component: {fileID: 16043903}
   m_Layer: 5
   m_Name: play
   m_TagString: Untagged
@@ -198,6 +199,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16043898}
   m_CullTransparentMesh: 1
+--- !u!114 &16043903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16043898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d027a187c100e409a8467a7864dedda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 1.1
 --- !u!1 &135626089
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,10 +704,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0.14875567
-    width: 1
-    height: 0.7024887
+    x: 0.179082
+    y: 0
+    width: 0.64208674
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -1453,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!223 &1203786550
 Canvas:
   m_ObjectHideFlags: 0
@@ -1638,7 +1652,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 16043901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203786554}
+        m_TargetAssemblyTypeName: MenuCanvasFader, Assembly-CSharp
+        m_MethodName: hideCanvas
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 3
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 16043903}
+        m_TargetAssemblyTypeName: SceneChange, Assembly-CSharp
+        m_MethodName: changeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1222271408
 BoxCollider2D:
   m_ObjectHideFlags: 0
